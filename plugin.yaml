@@ -1,0 +1,27 @@
+name: cloro
+version: 1.0.0
+description: "Live Google Search results for the built-in web_search tool, through the cloro API."
+author: cloro
+license: MIT
+kind: backend
+requires_hermes: ">=0.21.6"
+provides_web_providers:
+  - cloro
+provides_tools: []
+provides_hooks: []
+provides_middleware: []
+requires_env:
+  - name: CLORO_API_KEY
+    description: cloro API key
+    url: https://dashboard.cloro.dev/api-keys?utm_source=hermes-agent&utm_medium=byok
+    secret: true
+config_schema:
+  api_key:
+    type: secret
+    env: CLORO_API_KEY
+    label: cloro API key
+  country:
+    type: str
+    default: US
+    label: Country
+    description: 2-letter ISO 3166-1 code for the location of the results, for example US or DE.
